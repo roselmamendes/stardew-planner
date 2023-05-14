@@ -1,0 +1,52 @@
+  html {
+    background-color: gold;
+  }
+
+  #boxes {
+    content: "";
+    display: table;
+    clear: both;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  div {
+    float: left;
+    height: auto;
+    width: 23%;
+    padding: 10px;
+    margin: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #sidebar{
+    background-image: url("planner/stardew.jpg");
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+  }
+
+  a{
+    color: white;
+  }
+
+  .principal {
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

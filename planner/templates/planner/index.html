@@ -1,0 +1,26 @@
+{% extends "planner/base.html" %} 
+
+{% block content%}
+<h1>Stardew Planner - Fazendas </h1>
+
+{% if fazendas %}
+<table>
+    <tr>
+      <th>Nome</th>
+      <th>Receita</th>
+      <th>Data da Receita Inicial</th>
+      <th>Gastos Previstos</th>
+    </tr>
+    {% for fazenda in fazendas %}
+    <tr>
+        <td> <a href="/planner/{{ fazenda.id }}"> {{ fazenda.nome }} </a></td>
+        <td>{{ fazenda.receita }}</td>
+        <td>{{ fazenda.data_receita_inicial}}</td>
+        <td>{{ fazenda.gasto_previsto }}</td>
+    </tr>
+    {% endfor %}
+</table> 
+{% else %}
+    <p>Não há fazendas cadastradas.</p>
+{% endif %}
+{% endblock %}

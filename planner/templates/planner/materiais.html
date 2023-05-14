@@ -1,0 +1,25 @@
+{% extends "planner/base.html" %} 
+
+{% block content%}
+<h1>Stardew Planner - Materiais para Fazenda: {{ fazenda_nome }} </h1>
+
+<table>
+    <tr>
+      <th>Material</th>
+      <th>Quantidade</th>
+    </tr>
+    {% for key, value in quantidades.items %}
+    <tr>
+        <td> {{ key }}</td>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block sidebar%}
+<ul>
+    <li><a href="/planner">Home</a></li>
+    <li><a href="/planner/{{ fazenda_id }}">Tarefas para Fazenda</a></li>
+</ul>
+{% endblock %}

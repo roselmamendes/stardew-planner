@@ -1,0 +1,37 @@
+{% extends "planner/base.html" %} 
+
+{% block content%}
+<h1>Stardew Planner - Fazenda: {{ fazenda.nome }} </h1>
+<p>Receita: {{ fazenda.receita }}</p>
+<p>Data da receita inicial: {{ fazenda.data_receita_inicial }}</p>
+<p>Gasto previsto: {{ gasto_previsto }}</p>
+{% if tarefas %}
+<table>
+    <tr>
+      <th>Titulo</th>
+      <th>Custo</th>
+      <th>Categoria</th>
+      <th>Dependência</th>
+      <th>Feito</th>
+    </tr>
+    {% for tarefa in tarefas %}
+    <tr>
+        <td> {{ tarefa.titulo }}</td>
+        <td>{{ tarefa.custo }}</td>
+        <td>{{ tarefa.categoria}}</td>
+        <td>{{ tarefa.tarefa_dependente }}</td>
+        <td><input type="checkbox" {% if tarefa.Feito%} checked {% endif %}/></td>
+    </tr>
+    {% endfor %}
+</table> 
+{% else %}
+    <p>Não há tarefas cadastradas para esta fazenda.</p>
+{% endif %}
+{% endblock %}
+
+{% block sidebar%}
+<ul>
+    <li><a href="/planner">Home</a></li>
+    <li><a href="/planner/{{fazenda.id}}/materiais">Materiais para Fazenda</a></li>
+</ul>
+{% endblock %}
